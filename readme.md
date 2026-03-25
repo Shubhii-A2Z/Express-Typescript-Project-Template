@@ -17,14 +17,23 @@ cd <directory_name>
 npm i
 ```
 
-### 3. Setup Environment Variables
+### 3. Start as a fresh project
+
+If you're using this as a template:
+
+```
+rm -rf .git
+git init
+```
+
+### 4. Setup Environment Variables
 ```
 echo PORT=3000 >> .env
 ```
 
 Update the `.env` file with required values as per server.config
 
-### 4. Run the Project
+### 5. Run the Project
 ```
 npm run dev
 ```
