@@ -7,7 +7,7 @@ A minimal, clean, and scalable TypeScript starter template for building Node.js 
 ## 📦 Getting Started
 
 ### 1. Clone the Repository inside an existing folder
-git clone https://github.com/your-username/your-repo-name.git  <directory_name>
+git clone https://github.com/Shubhii-A2Z/Express-Typescript-Project-Template.git <directory_name>
 cd <directory_name>
 
 ### 2. Install Dependencies
