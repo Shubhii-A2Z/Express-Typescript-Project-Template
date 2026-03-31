@@ -35,6 +35,10 @@
     // "noFallthroughCasesInSwitch": true,
     // "noPropertyAccessFromIndexSignature": true,
 
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
 
