@@ -1,4 +1,4 @@
-name: "kafka_practice"
+name: "project-name"
 
 services:
   kafka:
