@@ -1,6 +1,20 @@
 name: "project-name"
 
 services:
+
+  grafana-lgtm:
+    image: grafana/otel-lgtm:latest
+    container_name: grafana-lgtm
+    ports:
+      - "3001:3000"   # Grafana UI  →  http://localhost:3001  (admin/admin)
+      - "9090:9090"   # Prometheus  →  http://localhost:9090
+      - "4317:4317"   # OTLP gRPC
+      - "4318:4318"   # OTLP HTTP   ← this is what instrumentation.ts uses
+    environment: # This sets the Grafana admin password inside the container. (default password is also admin btw)
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes: # named volume — it persists Grafana data (dashboards, datasources, alert rules you configure in the UI) across container restarts.
+      - lgtm-data:/data
+
   kafka:
     image: confluentinc/cp-kafka:7.6.0
     container_name: kafka
@@ -40,3 +54,6 @@ services:
       DYNAMIC_CONFIG_ENABLED: 'true'
     depends_on:
       - kafka
+
+volumes:
+  lgtm-data:
